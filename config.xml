@@ -77,13 +77,13 @@ Define a specific version of PhoneGap to build into your app.
 <icon src="res/icon/webos/icon-64.png" gap:platform="webos" />
 <icon src="res/icon/windows-phone/icon-48.png" gap:platform="winphone" />
 <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone" gap:role="background" />-->
-<!-- Define app splash screen for each platform. -->
+<!-- Define app splash screen for each platform. 
 
 <gap:splash src="res/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:qualifier="port-ldpi" />
 <gap:splash src="res/screen/android/screen-mdpi-portrait.png" gap:platform="android" gap:qualifier="port-mdpi" />
 <gap:splash src="res/screen/android/screen-hdpi-portrait.png" gap:platform="android" gap:qualifier="port-hdpi" />
 <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:qualifier="port-xhdpi" />
-
+-->
 <gap:splash gap:platform="android" src="img/icons/andoid/splash_screen_320_426.png" gap:qualifier="ldpi" />
 <gap:splash gap:platform="android" src="img/icons/andoid/splash_screen_320_470.png" gap:qualifier="mdpi" />
 <gap:splash gap:platform="android" src="img/icons/andoid/splash_screen_480_640.png" gap:qualifier="hdpi" />
