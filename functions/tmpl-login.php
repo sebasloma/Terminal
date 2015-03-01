@@ -22,8 +22,8 @@
 	require_once('connection/ConnectLogin.php');
 	
 	//Recogemos las variables login
-	$user = $_POST["user"];
-	$password = $_POST["password"];
+	$user = $_GET["user"];
+	$password = $_GET["password"];
 	
 	//Formamos la consulta para saber si existe el usuario
 	$sql = "SELECT TB1.USUARIO AS NOMBRE_USUARIO, TB2.NOMBRE AS EMPRESA, TB2.IP_SERVIDOR AS IP,
@@ -40,7 +40,7 @@
 	// Envía una consulta a MSSQL
 	$result = sqlsrv_query( $conn, $sql , array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET ));
 	if (sqlsrv_num_rows($result) == 0) {
-		echo "Error el usuario o la contraseña no son correctas";
+		print 2;
 	}else{
 			/* establecer la caducidad de la caché a 30 minutos */
 		session_cache_expire(30);
@@ -57,7 +57,7 @@
 			$_SESSION["NAME_BBDD"] =  $row["NAME_BBDD"];
 			$_SESSION["IDIOMA"] =  $row["IDIOMA"];
 			$_SESSION['LAST_ACTIVITY'] = time();
-			echo "ok";
+			print 1;
 		}
 	}
 	sqlsrv_close($conn);

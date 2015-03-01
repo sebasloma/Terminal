@@ -8,18 +8,17 @@ $(document).ready(function(){
 		var dataString = 'user='+username+'&password='+password;
 		if($.trim(username).length>0 && $.trim(password).length>0){
 			$.ajax({
-				type: "POST",
+				type: "GET",
 				url: host + "/functions/tmpl-login.php",
 				data: dataString,
 				cache: false,
 				beforeSend: function(){ $(".login-button").val('...');},
 				success: function(data){
-					if(data=='ok'){
+					if(data == 1){
 						$(".login-button").val('OK');
 						window.location=host;
 					}else{
-						//Shake animation effect.
-						alertify.alert(data);
+						alertify.alert('Inicio sesión', IdiomaRecogerTexto('text_aviso_error_user_password_incorrecto'));
 						$(".login-button").val(namebutton);
 					}
 				}
